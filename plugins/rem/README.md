@@ -28,9 +28,9 @@ When Claude learns something worth remembering, it records a pattern:
 - **Context**: All service classes in app/services/
 ```
 
-The `rem:observe` skill auto-loads when Claude encounters gotchas, discovers conventions, or learns something worth capturing.
+A hook fires randomly (~10% of stops) to prompt Claude to record learnings.
 
-### Consolidate (manual)
+### Nap (manual)
 
 Run `/rem:consolidate` periodically to:
 
@@ -40,9 +40,9 @@ Run `/rem:consolidate` periodically to:
 4. Prune stale/crystallized patterns
 5. Commit changes
 
-### Dream (random)
+### Dream (automatic)
 
-A hook fires randomly (~2% of stops) to remind Claude about accumulated patterns.
+A hook fires randomly (~2% of stops) to remind Claude to consolidate.
 
 ## Project Setup
 

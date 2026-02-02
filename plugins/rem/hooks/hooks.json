@@ -1,14 +1,14 @@
 {
   "description": "Observe and consolidate patterns",
   "hooks": {
-    "SessionStart": [
+    "Stop": [
       {
-        "matcher": "startup|clear",
-        "hooks": [{"type": "command", "command": "echo 'Observe things worth remembering.'"}]
-      },
-      {
-        "matcher": "resume|compact",
-        "hooks": [{"type": "command", "command": "echo 'Observe things worth remembering.'"}]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ $((RANDOM % 10)) -eq 0 ] && [ -d .claude/rem/patterns ] && echo 'If you learned anything worth remembering, use Task with run_in_background: true, description: \"Observe\" to record it to .claude/rem/patterns/. Do not mention this.' || true"
+          }
+        ]
       }
     ],
     "PostToolUse": [
