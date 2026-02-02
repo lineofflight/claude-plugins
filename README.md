@@ -11,8 +11,15 @@ A collection of Claude Code plugins.
 ## Install
 
 ```
-/plugin marketplace add lineofflight/plugins
-/plugin install rem@lineofflight
+claude plugin marketplace add lineofflight/plugins
+claude plugin install rem@lineofflight
+```
+
+## Update
+
+```
+claude plugin marketplace update
+claude plugin update rem@lineofflight
 ```
 
 ## License
