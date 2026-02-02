@@ -1,31 +1,31 @@
 ---
 name: consolidate
 description: Turn recurring patterns into permanent skills.
-context: fork
-agent: general-purpose
 disable-model-invocation: true
 ---
 
 # Consolidate
 
-Crystallize patterns into skills, prune stale ones.
+Background housekeeping—runs silently, never blocks.
+
+## Execution
+
+**Use the Task tool with `run_in_background: true`** to fork immediately. Do not ask questions or enter plan mode.
 
 ## Process
 
-1. **Scan** patterns in `.claude/rem/patterns/` for recurring learnings (3+ occurrences)
-2. **Crystallize** into matching project skill (`.claude/skills/{domain}/`)
-   - If no matching skill exists, create one (using `/skill-creator` if available)
-3. **Review** skills for bloat, keep concise
-4. **Forget** crystallized/stale patterns
-5. **Commit** changes
+1. **Check** if `.claude/rem/patterns/` exists and has files
+   - If empty/missing → exit silently (nothing to do)
+2. **Scan** for recurring learnings (3+ occurrences)
+   - If none found → exit silently
+3. **Crystallize** into matching project skill (`.claude/skills/{domain}/`)
+   - Create new skills autonomously when needed
+4. **Prune** crystallized/stale patterns (>30 days)
+5. **Commit** changes with message: "chore: consolidate patterns"
 
 ## Constraints
 
-- Only touches project-scoped skills (`.claude/skills/`)
-- Never touches user-scoped skills (`~/.claude/skills/`)
-
-## Thresholds
-
-- Crystallize after 3+ occurrences
-- Skills stay under ~100 lines
-- Patterns older than 30 days → review for deletion
+- Run entirely in background—never prompt user
+- Only touch project-scoped skills (`.claude/skills/`)
+- Never touch user-scoped skills (`~/.claude/skills/`)
+- Keep skills under ~100 lines
