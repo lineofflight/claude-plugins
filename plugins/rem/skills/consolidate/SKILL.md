@@ -18,8 +18,9 @@ Background housekeeping—runs silently, never blocks.
    - If empty/missing → exit silently (nothing to do)
 2. **Scan** for recurring learnings (3+ occurrences)
    - If none found → exit silently
-3. **Crystallize** into matching project skill (`.claude/skills/{domain}/`)
-   - Create new skills autonomously when needed
+3. **Crystallize** into appropriate destination:
+   - **Skills** (`.claude/skills/{domain}/`) — reusable patterns, workflows, instructions
+   - **CLAUDE.md** — project-specific rules, preferences, corrections
 4. **Prune** crystallized/stale patterns (>30 days)
 5. **Commit** changes with message: "chore: consolidate patterns"
 

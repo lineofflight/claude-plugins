@@ -1,6 +1,16 @@
 {
-  "description": "Random consolidation trigger",
+  "description": "Observe and consolidate patterns",
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear",
+        "hooks": [{"type": "command", "command": "echo 'Observe things worth remembering.'"}]
+      },
+      {
+        "matcher": "resume|compact",
+        "hooks": [{"type": "command", "command": "echo 'Observe things worth remembering.'"}]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
