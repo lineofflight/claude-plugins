@@ -10,7 +10,7 @@ Pattern-to-skill consolidation for Claude Code. Like sleep consolidates memory.
 
 ### Encode
 
-A `PreCompact` hook fires before context compaction to record patterns worth remembering:
+`PreCompact` and `SessionEnd` (on clear) hooks fire before context compaction or clearing to record patterns worth remembering:
 
 ```markdown
 # .claude/rem/patterns/rails.md
