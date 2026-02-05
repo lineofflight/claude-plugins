@@ -4,6 +4,7 @@
 claude --print --dangerously-skip-permissions --model sonnet \
   "Review this session transcript for patterns worth remembering:
    - debugging with unclear root causes
+   - tool failures and their resolutions
    - framework/library workarounds
    - undocumented gotchas
    - codebase conventions
