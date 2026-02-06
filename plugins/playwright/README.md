@@ -2,13 +2,4 @@
 
 Browser automation using Playwright.
 
-## MCP Servers
-
-Plugin bundles two Playwright MCP servers:
-
-| Server | Mode | Use case |
-|--------|------|----------|
-| `browsing` | Headed | Debugging, staying logged in |
-| `browsing-headless` | Headless | Automated checks, clean state |
-
-No manual MCP setup required — servers start automatically when plugin is enabled.
+Plugin provides a headless Playwright MCP server and a skill that guides the agent on use. Browser sessions persist across conversations per project. The skill delegates browsing to subagents that absorb all the navigation and snapshotting, acting as a token firewall for context hygiene.

@@ -3,13 +3,6 @@
     "command": "npx",
     "args": [
       "-y",
-      "@playwright/mcp@latest"
-    ]
-  },
-  "browsing-headless": {
-    "command": "npx",
-    "args": [
-      "-y",
       "@playwright/mcp@latest",
       "--headless"
     ]
